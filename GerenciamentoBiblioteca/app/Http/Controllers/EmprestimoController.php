@@ -24,7 +24,7 @@ class EmprestimoController extends Controller
         $request->validate([
             'livro_id' => 'required|exists:livros,id',
             'usuario_id' => 'required|exists:usuarios,id',
-            'dataEmprestimo' => 'required|date',
+            'dataEmprestimo' => 'nullable|date',
             'dataDevolucao' => 'nullable|date|after_or_equal:dataEmprestimo',
         ]);
 

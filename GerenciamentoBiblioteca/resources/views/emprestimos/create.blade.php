@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="container">
-        <h2>Adicionar Empréstimo</h2>
+        <h2>Adicionar Empréstimo (1 semana)</h2>
         <form action="{{ route('emprestimos.store') }}" method="POST">
             @csrf
             <div class="form-group">
@@ -22,14 +22,7 @@
                     @endforeach
                 </select>
             </div>
-            <div class="form-group">
-                <label for="dataEmprestimo">Data do Empréstimo</label>
-                <input type="date" name="dataEmprestimo" id="dataEmprestimo" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="dataDevolucao">Data de Devolução (opcional)</label>
-                <input type="date" name="dataDevolucao" id="dataDevolucao" class="form-control">
-            </div>
+
             <button type="submit" class="btn btn-primary">Adicionar Empréstimo</button>
         </form>
 
