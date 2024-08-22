@@ -26,4 +26,12 @@ class Emprestimo extends Model
     {
         return $this->belongsTo(Usuario::class);
     }
+
+    protected static function booted()
+    {
+        static::creating(function ($emprestimo) {
+            $emprestimo->dataEmprestimo = now()->format('Y-m-d');
+            $emprestimo->dataDevolucao = now()->addWeek()->format('Y-m-d');
+        });
+    }
 }

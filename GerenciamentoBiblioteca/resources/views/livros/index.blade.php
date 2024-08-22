@@ -31,12 +31,8 @@
                         <td>{{ $livro->anoPublicacao }}</td>
                         <td>{{ $livro->disponivel ? 'Sim' : 'Não' }}</td>
                         <td>
-                            @if($livro->img)
-                                <img src="{{ Storage::url($livro->img) }}" alt="{{ $livro->titulo }}" style="width: 100px;">
-                            @else
-                                N/A
-                            @endif
-                        </td>
+                            <img src="{{asset("storage/{$livro->img}")}}" alt="img" width="100">
+                         </td>
                         <td>
                             <a href="{{ route('livros.edit', $livro->id) }}" class="btn btn-warning btn-sm">Editar</a>
                             <form action="{{ route('livros.destroy', $livro->id) }}" method="POST" style="display:inline;">

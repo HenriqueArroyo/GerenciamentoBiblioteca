@@ -2,15 +2,16 @@
 
 @section('content')
     <div class="container">
+        <hr>
         <h3>Dashboard - Administrador</h3>
+        <hr>
         <form action="{{ route('usuarios.logout') }}" method="post">
             @csrf
-            <a href="/livros">Gerenciar Livros</a>
-            <input type="submit" value="sair">
-        </form>
+         <button type="submit"> <a href="/livros" style="text-decoration: none;" style="color: black">Gerenciar Livros</a></button><br><br><br><br>
+          <button type="submit">  <a href="/emprestimos" style="text-decoration: none;" style="color: black">Emprestimos</a></button>
 
-        @if (Auth::check())
-            <span>voce esta logado</span>
-        @endif
+       </form>
+
+
     </div>
 @endsection

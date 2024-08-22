@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Emprestimo;
-use App\Models\Livro;
 use App\Models\Livros;
 use App\Models\Usuario;
 
@@ -39,8 +38,6 @@ class EmprestimoController extends Controller
         Emprestimo::create([
             'livro_id' => $request->livro_id,
             'usuario_id' => $request->usuario_id,
-            'dataEmprestimo' => $request->dataEmprestimo,
-            'dataDevolucao' => $request->dataDevolucao,
             'devolvido' => false,
         ]);
 
