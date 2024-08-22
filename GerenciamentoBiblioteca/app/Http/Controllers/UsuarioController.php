@@ -35,7 +35,7 @@ class UsuarioController extends Controller
             if ($usuario->tipo === 'administrador') {
                 return redirect()->intended('/admindashboard');
             } else {
-                return redirect()->intended('/dashboard');
+                return redirect()->intended('/logado');
             }
         }
 

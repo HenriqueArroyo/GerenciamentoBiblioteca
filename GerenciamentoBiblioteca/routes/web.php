@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\LivrosController;
-
+use App\Http\Controllers\EmprestimoController;
 // Rota para exibir a homePage
 Route::get('',function(){
     return view('');
@@ -48,5 +48,15 @@ Route::post('/livros/update/{id}', [LivrosController::class, 'update'])->name('l
 Route::delete('/livros/delete/{id}', [LivrosController::class, 'destroy'])->name('livros.destroy');
 Route::get('/loja', [LivrosController::class, 'loja'])->name('livros.loja');
 Route::get('/', [LivrosController::class, 'loja'])->name('livros.loja');
+Route::get('/logado', [LivrosController::class, 'logado'])->name('livros.logado');
 
+
+// routes/web.php
+
+
+
+Route::get('/emprestimos', [EmprestimoController::class, 'index'])->name('emprestimos.index');
+Route::get('/emprestimos/create', [EmprestimoController::class, 'create'])->name('emprestimos.create');
+Route::post('/emprestimos', [EmprestimoController::class, 'store'])->name('emprestimos.store');
+Route::post('/emprestimos/{id}/devolucao', [EmprestimoController::class, 'devolucao'])->name('emprestimos.devolucao');
 

@@ -32,7 +32,7 @@
                            <img src="{{asset("storage/{$livro->img}")}}" alt="img" width="100">
                         </td>
                         <td>
-                            <form action="/registro" method="" style="display:inline;">
+                            <form action="/emprestimos/create" method="" style="display:inline;">
                                 @csrf
                                 <button type="submit" class="btn btn-success">Emprestimo</button>
                             </form>

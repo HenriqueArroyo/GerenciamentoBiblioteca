@@ -25,6 +25,12 @@ class LivrosController extends Controller
             $livros = Livros::all(); // Obtém todos os livros
             return view('livros.loja', compact('livros'));
         }
+
+        public function logado()
+        {
+            $livros = Livros::all(); // Obtém todos os livros
+            return view('livros.logado', compact('livros'));
+        }
     // Processar o envio do formulário para adicionar um novo livro
     public function store(Request $request)
     {

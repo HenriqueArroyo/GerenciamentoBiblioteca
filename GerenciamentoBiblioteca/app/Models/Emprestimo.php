@@ -4,12 +4,26 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Notifications\Notifiable;
 
 class Emprestimo extends Model
 {
-    use Notifiable, HasFactory;
+    use HasFactory;
+
     protected $fillable = [
-        'dataEmprestimo', 'dataDevolucao', 'livroId', 'usuarioId', 'devolvido',
+        'livro_id',
+        'usuario_id',
+        'dataEmprestimo',
+        'dataDevolucao',
+        'devolvido',
     ];
+
+    public function livro()
+    {
+        return $this->belongsTo(Livros::class);
+    }
+
+    public function usuario()
+    {
+        return $this->belongsTo(Usuario::class);
+    }
 }
